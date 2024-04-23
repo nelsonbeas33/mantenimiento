@@ -1,0 +1,4 @@
+Scaffold-DbContext "Server=.\SQLEXPRESS;Database=mantenimiento;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir conn
+
+
+Scaffold-DbContext "Server=.\SQLEXPRESS;Database=mantenimiento;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir dbmodel

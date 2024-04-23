@@ -1,0 +1,308 @@
+﻿@page
+@model mantenimiento.Pages.ManteinanceTableModel
+
+<head>
+
+    <link rel="stylesheet" href="~/css/form/style_form.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="d-flex flex-row justify-content-center">
+        <div class="maintTableForm">
+            <div class="wizard-form">
+                <form class="form-register" id="maintenanceSearch" action="#" method="get">
+                    <div id="form-total">
+
+                        <section>
+
+                            <div class="row">
+                                <div class="col d-flex justify-content-center inner">
+                                    <div class="form-heading">
+                                        <h3>Mantenimientos</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="inner mx-3">
+                                <div class="row">
+
+                                    <div class="col-3">
+                                        <div class="floating-label d-flex flex-column">
+                                            <input class="floating-input" type="text" placeholder="" id="user" name="user">
+                                            <span class="highlight"></span>
+                                            <label class="labelInput">Usuario</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3">
+                                        <div class="floating-label d-flex flex-column">
+                                            
+                                            @if (Model._filter_name != null)
+                                            {
+                                                <input class="floating-input" type="text" placeholder="" id="titulo" name="filter_name" value="@Model._filter_name">
+                                            }
+                                            else
+                                            {
+                                                <input class="floating-input" type="text" placeholder="" id="titulo" name="filter_name">
+
+                                            }
+
+                                            <span class="highlight"></span>
+                                            <label class="labelInput">Nombre</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3">
+                                        <div class="floating-label d-flex flex-column">
+
+                                            @if (Model._filter_name != null)
+                                            {
+                                                <input class="floating-input" type="text" placeholder="" id="causa_raiz" name="filter_route_cause" value="@Model._filter_route_cause">
+                                            }
+                                            else
+                                            {
+                                                <input class="floating-input" type="text" placeholder="" id="causa_raiz" name="filter_route_cause">
+                                            }
+
+                                            <span class="highlight"></span>
+                                            <label class="labelInput">causa raíz</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3">
+                                        <div class="floating-label d-flex flex-column">
+                                            <input class="floating-input" type="text" placeholder="" name="filter_sub_cause" id="sub_causa">
+                                            <span class="highlight"></span>
+                                            <label class="labelInput">sub - causa</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="form-row form-row-date">
+                                            <div class="form-holder form-holder-2">
+                                                <label for="date" class="special-label">&nbsp;&nbsp;Fecha inicio</label>
+
+                                                <div class="d-flex flex-row">
+                                                    <select name="date" id="" class="form-control flex-grow-1">
+                                                        <option class="opctionBlack" value="01" selected>01</option>
+                                                        <option class="opctionBlack" value="02">02</option>
+                                                        <option class="opctionBlack" value="03">03</option>
+                                                        <option class="opctionBlack" value="04">04</option>
+                                                        <option class="opctionBlack" value="05">05</option>
+                                                        <option class="opctionBlack" value="06">06</option>
+                                                        <option class="opctionBlack" value="07">07</option>
+                                                        <option class="opctionBlack" value="08">08</option>
+                                                        <option class="opctionBlack" value="09">09</option>
+                                                        <option class="opctionBlack" value="10">10</option>
+                                                        <option class="opctionBlack" value="11">11</option>
+                                                        <option class="opctionBlack" value="12">12</option>
+                                                        <option class="opctionBlack" value="13">13</option>
+                                                        <option class="opctionBlack" value="14">14</option>
+                                                        <option class="opctionBlack" value="15">15</option>
+                                                        <option class="opctionBlack" value="16">16</option>
+                                                        <option class="opctionBlack" value="17">17</option>
+                                                        <option class="opctionBlack" value="18">18</option>
+                                                        <option class="opctionBlack" value="19">19</option>
+                                                        <option class="opctionBlack" value="20">20</option>
+                                                        <option class="opctionBlack" value="21">21</option>
+                                                        <option class="opctionBlack" value="22">22</option>
+                                                        <option class="opctionBlack" value="23">23</option>
+                                                        <option class="opctionBlack" value="24">24</option>
+                                                        <option class="opctionBlack" value="25">25</option>
+                                                        <option class="opctionBlack" value="26">26</option>
+                                                        <option class="opctionBlack" value="27">27</option>
+                                                        <option class="opctionBlack" value="28">28</option>
+                                                        <option class="opctionBlack" value="29">29</option>
+                                                        <option class="opctionBlack" value="30">30</option>
+                                                        <option class="opctionBlack" value="31">31</option>
+                                                    </select>
+
+                                                    <select name="month" id="" class="form-control flex-grow-1">
+                                                        <option class="opctionBlack" value="Jan" selected>Ene</option>
+                                                        <option class="opctionBlack" value="Feb">Feb</option>
+                                                        <option class="opctionBlack" value="Mar">Mar</option>
+                                                        <option class="opctionBlack" value="Apr">Apr</option>
+                                                        <option class="opctionBlack" value="May">May</option>
+                                                        <option class="opctionBlack" value="May">Jun</option>
+                                                        <option class="opctionBlack" value="May">Jul</option>
+                                                        <option class="opctionBlack" value="May">Ago</option>
+                                                        <option class="opctionBlack" value="May">Sep</option>
+                                                        <option class="opctionBlack" value="May">Oct</option>
+                                                        <option class="opctionBlack" value="May">Nov</option>
+                                                        <option class="opctionBlack" value="May">Dic</option>
+                                                    </select>
+
+                                                    <select name="year" id="" class="form-control flex-grow-1">
+                                                        <option class="opctionBlack" value="2018" selected>2024</option>
+                                                        <option class="opctionBlack" value="2017">2023</option>
+                                                        <option class="opctionBlack" value="2017">2022</option>
+                                                        <option class="opctionBlack" value="2016">2021</option>
+                                                        <option class="opctionBlack" value="2015">2020</option>
+                                                        <option class="opctionBlack" value="2014">2019</option>
+                                                        <option class="opctionBlack" value="2013">2018</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-holder form-holder-2">
+                                                <label for="date" class="special-label">&nbsp;&nbsp;Fecha fin</label>
+
+                                                <div class="d-flex flex-row">
+                                                    <select name="date" id="" class="form-control flex-grow-1">
+                                                        <option class="opctionBlack" value="01" selected>01</option>
+                                                        <option class="opctionBlack" value="02">02</option>
+                                                        <option class="opctionBlack" value="03">03</option>
+                                                        <option class="opctionBlack" value="04">04</option>
+                                                        <option class="opctionBlack" value="05">05</option>
+                                                        <option class="opctionBlack" value="06">06</option>
+                                                        <option class="opctionBlack" value="07">07</option>
+                                                        <option class="opctionBlack" value="08">08</option>
+                                                        <option class="opctionBlack" value="09">09</option>
+                                                        <option class="opctionBlack" value="10">10</option>
+                                                        <option class="opctionBlack" value="11">11</option>
+                                                        <option class="opctionBlack" value="12">12</option>
+                                                        <option class="opctionBlack" value="13">13</option>
+                                                        <option class="opctionBlack" value="14">14</option>
+                                                        <option class="opctionBlack" value="15">15</option>
+                                                        <option class="opctionBlack" value="16">16</option>
+                                                        <option class="opctionBlack" value="17">17</option>
+                                                        <option class="opctionBlack" value="18">18</option>
+                                                        <option class="opctionBlack" value="19">19</option>
+                                                        <option class="opctionBlack" value="20">20</option>
+                                                        <option class="opctionBlack" value="21">21</option>
+                                                        <option class="opctionBlack" value="22">22</option>
+                                                        <option class="opctionBlack" value="23">23</option>
+                                                        <option class="opctionBlack" value="24">24</option>
+                                                        <option class="opctionBlack" value="25">25</option>
+                                                        <option class="opctionBlack" value="26">26</option>
+                                                        <option class="opctionBlack" value="27">27</option>
+                                                        <option class="opctionBlack" value="28">28</option>
+                                                        <option class="opctionBlack" value="29">29</option>
+                                                        <option class="opctionBlack" value="30">30</option>
+                                                        <option class="opctionBlack" value="31">31</option>
+                                                    </select>
+
+                                                    <select name="month" id="" class="form-control flex-grow-1">
+                                                        <option class="opctionBlack" value="Jan" selected>Ene</option>
+                                                        <option class="opctionBlack" value="Feb">Feb</option>
+                                                        <option class="opctionBlack" value="Mar">Mar</option>
+                                                        <option class="opctionBlack" value="Apr">Apr</option>
+                                                        <option class="opctionBlack" value="May">May</option>
+                                                        <option class="opctionBlack" value="May">Jun</option>
+                                                        <option class="opctionBlack" value="May">Jul</option>
+                                                        <option class="opctionBlack" value="May">Ago</option>
+                                                        <option class="opctionBlack" value="May">Sep</option>
+                                                        <option class="opctionBlack" value="May">Oct</option>
+                                                        <option class="opctionBlack" value="May">Nov</option>
+                                                        <option class="opctionBlack" value="May">Dic</option>
+                                                    </select>
+
+                                                    <select name="year" id="" class="form-control flex-grow-1">
+                                                        <option class="opctionBlack" value="2018" selected>2024</option>
+                                                        <option class="opctionBlack" value="2017">2023</option>
+                                                        <option class="opctionBlack" value="2017">2022</option>
+                                                        <option class="opctionBlack" value="2016">2021</option>
+                                                        <option class="opctionBlack" value="2015">2020</option>
+                                                        <option class="opctionBlack" value="2014">2019</option>
+                                                        <option class="opctionBlack" value="2013">2018</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5">
+                                        <div class="form-row">
+                                            <div class="form-holder form-holder-2">
+                                                <label for="filter_category_id" class="special-label">Categoria</label>
+                                                <select name="filter_category_id" id="filter_category_id" class="form-control">
+                                                    <option class="opctionBlack" value="1" selected>categoria 1</option>
+                                                    <option class="opctionBlack" value="2">categoria 2</option>
+                                                    <option class="opctionBlack" value="3">categoria 3</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-holder form-holder-2">
+                                                <label for="filter_success" class="special-label">Proposito</label>
+                                                <select name="filter_success" id="filter_success" class="form-control">
+                                                    <option class="opctionBlack" value="ambos" selected>ambos</option>
+                                                    <option class="opctionBlack" value="Cumplido">Cumplido</option>
+                                                    <option class="opctionBlack" value="No cumplido">No cumplido</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mx-3">
+                                        <table class="table table-striped table-dark">
+                                            <thead>
+                                                <tr>
+                                                    <th class=" colorBlue" scope="col">id</th>
+                                                    <th class=" colorBlue" scope="col">line elemenet id</th>
+                                                    <th class=" colorBlue" scope="col">Nombre</th>
+                                                    <th class=" colorBlue" scope="col">Fecha inicio</th>
+                                                    <th class=" colorBlue" scope="col">Fecha final</th>
+                                                    <th class=" colorBlue" scope="col">proposito</th>
+                                                    <th class=" colorBlue" scope="col">Causa raiz</th>
+                                                    <th class=" colorBlue" scope="col">Sub causa</th>
+                                                    <th class=" colorBlue" scope="col">Descripción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var mainteinance in Model.maintenances)
+                                                {
+                                                    <tr>
+                                                        <th scope="row">@mainteinance.Id</th>
+                                                        <th scope="row">@mainteinance.LineElementId</th>
+                                                        <th scope="row">@mainteinance.Name</th>
+                                                        <th scope="row">@mainteinance.InicialDate</th>
+                                                        <th scope="row">@mainteinance.FinalDate</th>
+
+                                                        @if (mainteinance.Success == true){ <th scope="row">éxito</th> }
+                                                        else { <th scope="row">sin éxito</th> }
+
+                                                        <th scope="row">@mainteinance.RootCause</th>
+                                                        <th scope="row">@mainteinance.SubCause</th>
+                                                        <th scope="row">@mainteinance.Desc</th>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </section>
+                    </div>
+
+                    <input type="submit" value="buscar" />
+
+                </form>
+                <form method="get" id="formReturn">
+                    <button id="returnButton" type="submit">Regresar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+
+    <script src="~/js/form/postData.js"></script>
+    <script src="~/js/maintenanceFilters/submitMaintenanceSearch.js"></script>
+</body>
